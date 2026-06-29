@@ -1,0 +1,92 @@
+.testimonials-carousel {
+  position: relative;
+  padding: 14px 24px;
+  background-color: #ffffff;
+  border-radius: 12px;
+
+  &__window {
+    position: relative;
+    transition: 0.16s ease-in-out;
+  }
+
+  &__slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.16s ease-in-out;
+    cursor: pointer;
+
+    &--active {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  picture {
+    flex-shrink: 0;
+  }
+
+  &__image {
+    flex-shrink: 0;
+    width: 40px;
+    border-radius: 50%;
+    border: 1.5px solid #be17ac;
+
+    .testimonials-carousel__slide--institutions & {
+      border-color: #0cb0f1;
+    }
+
+    .testimonials-carousel__slide--learners & {
+      border-color: #ffa621;
+    }
+
+    .testimonials-carousel__slide--states & {
+      border-color: #4ab052;
+    }
+  }
+
+  p,
+  &__name {
+    font-size: rem-calc(12px);
+    font-weight: 500;
+    font-style: normal;
+    line-height: 130%;
+    color: #1b00a0;
+  }
+
+  &__name {
+    max-width: 75%;
+    margin-top: 6px;
+  }
+
+  &__controls {
+    position: absolute;
+    right: 24px;
+    bottom: 14px;
+    display: flex;
+    gap: 4px;
+
+    li {
+      font-size: 0;
+    }
+
+    button {
+      width: 8px;
+      height: 8px;
+      padding: 0;
+      background-color: #fce1f9;
+      border: 0;
+      appearance: none;
+      cursor: pointer;
+
+      &.active {
+        background-color: #be17ac;
+      }
+    }
+  }
+}
